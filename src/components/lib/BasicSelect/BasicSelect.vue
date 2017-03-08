@@ -83,6 +83,9 @@
       filteredOptions () {
         if (this.searchText) {
           return this.options.filter(option => {
+              if (option.value == 'new') {
+                  return true
+              }
             return option.text.match(new RegExp(this.searchText, 'i'))
           })
         } else {
